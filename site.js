@@ -48,3 +48,17 @@ f.addEventListener("submit", async e => {
     alert("Message sent! Thank you.");
   } catch { alert("Sorry, message could not be sent. Please email me directly."); }
 });
+
+(async () => {
+  const gal = await load("gallery");
+  if (gal.length) document.getElementById("galleryBox").innerHTML = gal.map(g =>
+    `<div class="gallery-box"><img src="${esc(g.image)}" alt=""></div>`).join("");
+
+  const edu = await load("education");
+  if (edu.length) document.getElementById("educationBox").innerHTML = edu.map(e => `
+    <div class="edu-box"><h3>${esc(e.year)}</h3><h4>${esc(e.title)}</h4><p>${esc(e.desc)}</p></div>`).join("");
+
+  const st = await load("stats");
+  if (st.length) document.getElementById("statsBox").innerHTML = st.map(x =>
+    `<div class="stat-box"><h2>${esc(x.value)}</h2><p>${esc(x.label)}</p></div>`).join("");
+})();

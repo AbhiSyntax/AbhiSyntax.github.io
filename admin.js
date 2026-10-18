@@ -7,7 +7,10 @@ const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 
 const CFG = {
   projects: [["title","Title"],["desc","Description"],["image","Image (file name like gpk1.jpeg, or full URL)"],["link","Link (project URL)"],["order","Order (1,2,3...)"]],
-  skills:   [["name","Skill name"],["icon","Icon class (e.g. fab fa-html5)"],["percent","Percent (0-100)"],["order","Order (1,2,3...)"]]
+  skills:   [["name","Skill name"],["icon","Icon class (e.g. fab fa-html5)"],["percent","Percent (0-100)"],["order","Order (1,2,3...)"]],
+  gallery:  [["image","Image (file name like park1.jpeg, or full URL)"],["order","Order (1,2,3...)"]],
+  education:[["year","Year (e.g. 2025)"],["title","Title"],["desc","Description"],["order","Order (1,2,3...)"]],
+  stats:    [["value","Value (e.g. 50+)"],["label","Label (e.g. Projects)"],["order","Order (1,2,3...)"]]
 };
 const NUM = ["percent","order"];
 
@@ -17,6 +20,17 @@ const DEFAULTS = {
     {name:"CSS",icon:"fab fa-css3-alt",percent:90,order:2},
     {name:"JavaScript",icon:"fab fa-js",percent:75,order:3},
     {name:"Python",icon:"fab fa-python",percent:80,order:4}
+  ],
+  gallery: ["team1","park1","team2","labteam","3rdsemgarden","park2"].map((n,i)=>({image:n+".jpeg",order:i+1})),
+  education: [
+    {year:"2025",title:"Started Diploma in Computer Science",desc:"Began my journey in computer science, learning programming fundamentals.",order:1},
+    {year:"2026",title:"Learning Web Development & Python",desc:"Exploring HTML, CSS, JavaScript and strengthening Python skills.",order:2},
+    {year:"2027",title:"Preparing for Internship",desc:"Building projects and gaining practical experience in development.",order:3}
+  ],
+  stats: [
+    {value:"50+",label:"Projects",order:1},
+    {value:"10+",label:"Certificates",order:2},
+    {value:"100%",label:"Dedication",order:3}
   ],
   projects: [
     {title:"Portfolio Website",desc:"Responsive personal portfolio using HTML & CSS.",image:"gpk1.jpeg",link:"#",order:1},
@@ -60,7 +74,7 @@ async function show(t) {
       fields.map(([k, l]) => `<label>${l}</label><input id="f_${k}">`).join("") +
       `<button id="saveBtn">Add</button><button id="clearBtn" class="red">Clear</button></div>` +
       (rows.length ? "" : `<button id="seed">Import current site data</button>`) +
-      rows.map(r => `<div class="card"><b>${esc(r.title || r.name)}</b>
+      rows.map(r => `<div class="card"><b>${esc((r.year ? r.year + " - " : "") + (r.title || r.name || r.label || r.image))}</b>
         <button data-edit="${r.id}">Edit</button><button class="red" data-del="${r.id}">Delete</button></div>`).join("");
 
     $("#clearBtn").onclick = () => show(t);
