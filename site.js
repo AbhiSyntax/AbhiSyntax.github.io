@@ -1,5 +1,5 @@
 import { db } from "./firebase-config.js";
-import { collection, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { collection, getDocs, getDoc, doc, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 
@@ -61,4 +61,19 @@ f.addEventListener("submit", async e => {
   const st = await load("stats");
   if (st.length) document.getElementById("statsBox").innerHTML = st.map(x =>
     `<div class="stat-box"><h2>${esc(x.value)}</h2><p>${esc(x.label)}</p></div>`).join("");
+})();
+
+(async () => {
+  try {
+    const s = await getDoc(doc(db, "settings", "main"));
+    if (!s.exists()) return;
+    const v = s.data();
+    const ok = u => u && !/^\s*javascript:/i.test(u);
+    document.querySelectorAll("[data-link]").forEach(a => {
+      const u = v[a.dataset.link];
+      if (ok(u)) { a.href = u; a.target = "_blank"; a.rel = "noopener"; }
+      else a.style.display = "none";
+    });
+    if (ok(v.cv)) { const b = document.getElementById("cvBtn"); b.href = v.cv; b.target = "_blank"; b.rel = "noopener"; b.download = ""; b.style.display = "inline-block"; }
+  } catch {}
 })();

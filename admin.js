@@ -1,6 +1,6 @@
 import { auth, db } from "./firebase-config.js";
 import { signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-import { collection, getDocs, addDoc, setDoc, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { collection, getDocs, addDoc, setDoc, getDoc, doc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -12,6 +12,7 @@ const CFG = {
   education:[["year","Year (e.g. 2025)"],["title","Title"],["desc","Description"],["order","Order (1,2,3...)"]],
   stats:    [["value","Value (e.g. 50+)"],["label","Label (e.g. Projects)"],["order","Order (1,2,3...)"]]
 };
+const SET = [["cv","CV link (file name like Abhinav_CV.pdf, or full URL/Drive link)"],["facebook","Facebook link"],["twitter","Twitter / X link"],["instagram","Instagram link"],["linkedin","LinkedIn link"],["github","GitHub link"]];
 const NUM = ["percent","order"];
 
 const DEFAULTS = {
@@ -59,6 +60,20 @@ async function show(t) {
   editId = null;
   document.querySelectorAll(".tab").forEach(b => b.classList.toggle("on", b.dataset.tab === t));
   const box = $("#content");
+  if (t === "settings") {
+    const d = await getDoc(doc(db, "settings", "main"));
+    const v = d.exists() ? d.data() : {};
+    box.innerHTML = "<h2>Settings</h2><p>Khali chhodoge to us link ka icon site se hat jayega.</p><div class='card'>" +
+      SET.map(([k, l]) => `<label>${l}</label><input id="f_${k}" value="${esc(v[k])}">`).join("") +
+      `<button id="saveBtn">Save</button><p id="ok"></p></div>`;
+    $("#saveBtn").onclick = async () => {
+      const data = {};
+      SET.forEach(([k]) => data[k] = $("#f_" + k).value.trim());
+      await setDoc(doc(db, "settings", "main"), data);
+      $("#ok").textContent = "Saved!";
+    };
+    return;
+  }
   const snap = await getDocs(collection(db, t));
   const rows = snap.docs.map(d => ({ id: d.id, ...d.data() }));
 
