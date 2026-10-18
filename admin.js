@@ -77,7 +77,9 @@ async function show(t) {
       $("#saveBtn").textContent = "Update";
       scrollTo({ top: 0, behavior: "smooth" });
     });
-    if ($("#seed")) $("#seed").onclick = async () => {
+    if ($("#seed")) $("#seed").onclick = async e => {
+      e.target.disabled = true;
+      e.target.textContent = "Importing...";
       for (const d of DEFAULTS[t]) await addDoc(collection(db, t), d);
       show(t);
     };
