@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Abhinav Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <a href="#" class="logo" style="color:rgb(159, 224, 249);">𝖆𝖇𝖍𝖎ꪀꪖꪜ</a>
+
+    <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<section class="home">
+
+    <div class="home-content">
+
+        <h3>Hello, It's Me</h3>
+
+        <h1>Abhinav Raj</h1>
+
+        <h3>And I'm a <span>Frontend Developer</span></h3>
+
+        <p>
+            Passionate Frontend Developer creating modern,
+            responsive and user-friendly websites.
+        </p>
+
+        <div class="social-media">
+
+            <a href="" target="_blank"><i class="fab fa-facebook-f"></i></a>
+
+            <a href="" target="_blank"><i class="fab fa-twitter"></i></a>
+
+            <a href="https://www.instagram.com/abhinavp.o?igsh=MTg2eTZsbGhnbm9rNQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+
+            <a href="" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+
+        </div>
+
+        <a href="#" class="btn">Download CV</a>
+
+    </div>
+
+    <div class="home-img">
+
+        <div class="hexagon">
+
+            <img src="abhinavphoto.png" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;" >
+
+        </div>
+
+    </div>
+
+</section>
+<section class="about" id="about">
+
+    <div class="about-img">
+        <img src="abhinavghibli.jpeg" alt="About Image">
+    </div>
+
+    <div class="about-content">
+
+        <h2 class="heading">About <span>Me</span></h2>
+
+        <h3>Frontend Developer</h3>
+
+        <p>
+            Hello! My name is Abhinav Raj. I am a Computer Science student
+            at Government Polytechnic Katihar. I am passionate about Web
+            Development and continuously learning new technologies.
+            I enjoy creating responsive and modern websites using
+            HTML, CSS, JavaScript and other web technologies.
+        </p>
+
+        <a href="#" class="btn">Read More</a>
+
+    </div>
+
+</section>
+<section class="skills" id="skills">
+
+    <div class="skills-heading">
+        <h5>WHAT I DO</h5>
+        <h2>My <span>Skills</span></h2>
+
+        <p>
+            I work with a variety of technologies to create
+            modern and responsive websites.
+        </p>
+    </div>
+
+    <div class="skills-container">
+
+        <!-- HTML -->
+        <div class="skill-card">
+            <div class="skill-top">
+                <i class="fab fa-html5"></i>
+                <h3>HTML</h3>
+
+                <div class="percent-circle">
+                    <span>95%</span>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress html"></div>
+            </div>
+        </div>
+
+        <!-- CSS -->
+        <div class="skill-card">
+            <div class="skill-top">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS</h3>
+
+                <div class="percent-circle">
+                    <span>90%</span>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress css"></div>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="skill-card">
+            <div class="skill-top">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+
+                <div class="percent-circle">
+                    <span>75%</span>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress js"></div>
+            </div>
+        </div>
+
+        <!-- Python -->
+        <div class="skill-card">
+            <div class="skill-top">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
+
+                <div class="percent-circle">
+                    <span>80%</span>
+                </div>
+            </div>
+
+            <div class="progress-bar">
+                <div class="progress python"></div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section class="portfolio" id="portfolio">
+
+    <!-- <div class="portfolio-heading">
+        <h5>MY WORK</h5>
+        <h2>Latest <span>Projects</span></h2>
+        <p>Some projects that I have designed and developed.</p>
+    </div> -->
+    <div class="portfolio-heading">
+    <h5>MY WORK</h5>
+
+    <h2>Latest <span>Projects</span></h2>
+
+    <h3 class="portfolio-name">𝖆𝖇𝖍𝖎ꪀꪖꪜ...</h3>
+
+    <p>Some projects that I have designed and developed.</p>
+</div>
+
+    <div class="portfolio-container">
+
+        <div class="portfolio-box">
+            <img src="gpk1.jpeg" alt="Project 1">
+
+            <div class="portfolio-layer">
+                <h4>Portfolio Website</h4>
+                <p>Responsive personal portfolio using HTML & CSS.</p>
+                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="portfolio-box">
+            <img src="gpk3.jpeg" alt="Project 2">
+
+            <div class="portfolio-layer">
+                <h4>College Website</h4>
+                <p>Modern college website with responsive design.</p>
+                <a href="indax.html" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+
+        <div class="portfolio-box">
+            <img src="gpk2.jpeg" alt="Project 3">
+
+            <div class="portfolio-layer">
+                <h4>Landing Page</h4>
+                <p>Creative landing page with animations.</p>
+                <a href="#"><i class="fas fa-external-link-alt"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+<section class="gallery" id="gallery">
+
+    <div class="gallery-heading">
+        <h5>MY GALLERY</h5>
+        <h2>Photo <span>Gallery</span></h2>
+        <p>Some memorable moments and project showcases.</p>
+    </div>
+
+    <div class="gallery-container">
+
+        <div class="gallery-box">
+            <img src="team1.jpeg" alt="">
+        </div>
+
+        <div class="gallery-box">
+            <img src="park1.jpeg" alt="">
+        </div>
+
+        <div class="gallery-box">
+            <img src="team2.jpeg" alt="">
+        </div>
+
+        <div class="gallery-box">
+            <img src="labteam.jpeg" alt="">
+        </div>
+
+        <div class="gallery-box">
+            <img src="3rdsemgarden.jpeg" alt="">
+        </div>
+
+        <div class="gallery-box">
+            <img src="park2.jpeg" alt="">
+        </div>
+
+    </div>
+
+</section>
+
+<section class="education" id="education">
+
+    <h2 class="education-title">
+        Education <span>Journey</span>
+    </h2>
+
+    <div class="education-container">
+
+        <!-- Left Side Timeline -->
+
+        <div class="education-content">
+
+            <div class="edu-box">
+                <h3>2025</h3>
+                <h4>Started Diploma in Computer Science</h4>
+                <p>
+                    Began my journey in computer science,
+                    learning programming fundamentals.
+                </p>
+            </div>
+
+            <div class="edu-box">
+                <h3>2026</h3>
+                <h4>Learning Web Development & Python</h4>
+                <p>
+                    Exploring HTML, CSS, JavaScript and
+                    strengthening Python skills.
+                </p>
+            </div>
+
+            <div class="edu-box">
+                <h3>2027</h3>
+                <h4>Preparing for Internship</h4>
+                <p>
+                    Building projects and gaining practical
+                    experience in development.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Right Side Image -->
+
+        <div class="education-image">
+            <img src="educatiohnjourney.jpeg" alt="Education">
+        </div>
+
+    </div>
+
+</section>
+<section class="contact" id="contact">
+
+    <div class="contact-heading">
+        <h5>GET IN TOUCH</h5>
+        <h2>Contact <span>Me</span></h2>
+        <p>Have a project in mind? Let's work together.</p>
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-info">
+
+            <div class="info-box">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4>Email</h4>
+                    <p>abhinavrajktr333@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h4>Phone</h4>
+                    <p>+91 79704 13034</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <i class="fas fa-location-dot"></i>
+                <div>
+                    <h4>Location</h4>
+                    <p>Bihar, India</p>
+                </div>
+            </div>
+
+        </div>
+
+        <form class="contact-form" action="https://formsubmit.co/abhinavrajktr333@gmail.com" method="GET" target="_blank">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <input type="text" placeholder="Subject">
+
+            <textarea rows="6" placeholder="Your Message"></textarea>
+
+            <button type="submit">Send Message</button>
+
+        </form>
+
+    </div>
+
+</section>
+<section class="services" id="services">
+
+<h2 class="heading" style="text-align:center;">My <span>Services</span></h2>
+
+<div class="services-container">
+
+<div class="service-box">
+<i class="fas fa-code"></i>
+<h3>Web Development</h3>
+<p>Modern responsive websites.</p>
+</div>
+
+<div class="service-box">
+<i class="fas fa-palette"></i>
+<h3>UI Design</h3>
+<p>Beautiful user interfaces.</p>
+</div>
+
+<div class="service-box">
+<i class="fas fa-mobile-alt"></i>
+<h3>Responsive Design</h3>
+<p>Mobile friendly layouts.</p>
+</div>
+
+</div>
+
+</section>
+<section class="stats">
+
+<div class="stat-box">
+<h2>50+</h2>
+<p>Projects</p>
+</div>
+
+<div class="stat-box">
+<h2>10+</h2>
+<p>Certificates</p>
+</div>
+
+<div class="stat-box">
+<h2>100%</h2>
+<p>Dedication</p>
+</div>
+
+</section>
+
+<footer class="footer">
+
+<p>©️ 2026 Abhinav Raj | All Rights Reserved</p>
+
+<div class="footer-icons">
+<a href="#"><i class="fab fa-github"></i></a>
+<a href="#"><i class="fab fa-linkedin"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+</div>
+
+</footer>
+<button id="topBtn" class="top-btn">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<script>
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if(window.pageYOffset > 300){
+        topBtn.style.display = "flex";
+    }else{
+        topBtn.style.display = "none";
+    }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+</script>
+
+</body>
+</html>
