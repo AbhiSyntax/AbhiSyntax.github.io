@@ -924,3 +924,37 @@ margin:0 10px;
 .footer-icons a:hover{
 text-shadow:0 0 15px #00eaff;
 }
+/* ===== MOBILE FIXES ===== */
+img{max-width:100%}
+html,body{overflow-x:hidden}
+
+@media(max-width:992px){
+    .header{flex-wrap:wrap;justify-content:center;gap:12px;padding:16px 5%}
+    .navbar{display:flex;width:100%;overflow-x:auto;gap:22px;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+    .navbar a{margin-left:0;white-space:nowrap}
+}
+
+@media(max-width:768px){
+    .about,.skills,.portfolio,.gallery,.contact,.services,.education{padding:70px 5%}
+    .portfolio-container,.gallery-container{grid-template-columns:1fr}
+    .info-box p{word-break:break-all}
+}
+
+@media(max-width:480px){
+    .about,.skills,.portfolio,.gallery,.contact,.services,.education{padding:55px 5%}
+    .heading,.skills-heading h2,.portfolio-heading h2,.gallery-heading h2,.contact-heading h2,.education-title{font-size:32px}
+    .skills-heading p{font-size:15px}
+    .skill-card{padding:18px}
+    .skill-top i{font-size:34px}
+    .skill-top h3{font-size:19px}
+    .stat-box h2{font-size:38px}
+    .stats{padding:50px 5%;gap:20px}
+    .portfolio-name{font-size:24px}
+    .footer{padding:24px 5%}
+}
+
+@media(hover:none){
+    .portfolio-layer{bottom:0;height:auto;padding:14px;background:linear-gradient(rgba(0,0,0,0),rgba(0,188,212,.95))}
+    .portfolio-layer p{margin:6px 0 10px;font-size:14px}
+    .portfolio-layer a{width:40px;height:40px;font-size:16px}
+}
